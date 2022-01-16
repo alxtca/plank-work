@@ -2,6 +2,9 @@
 //import values from '../App'
 
 import React, {useState, useEffect} from "react"
+import useSound from 'use-sound'
+import boopSfx from '../sounds/beep-07a.mp3'
+import boopEnd from '../sounds/applause.wav'
 
 const Main = (props) => {
   const [working, setWorking] = useState(false)
@@ -11,18 +14,23 @@ const Main = (props) => {
   const [work, setWork] = useState(props.workout.work)
   const [rest, setRest] = useState(props.workout.rest)
   const [rounds, setRounds] = useState(1)
+  const [play] = useSound(boopSfx)
+  const [playEnd] = useSound(boopEnd)
 
   useEffect(()=>{
+
     if (working)
     {
       if (work > 0) { //countdown work
         setTimeout(() => {
+          if (work < 4) {  play()   }
           setWork(work-1)
         }, 1000)
       }
       if (work === 0) { //countdown rest
         if (rest > 0){
           setTimeout(() => {
+            if (rest < 4) {  play()   }
             setRest(rest-1)
           }, 1000)
         }
@@ -37,6 +45,7 @@ const Main = (props) => {
             setWorking(false)
             // fanfara can be added here
             setFanfara(true)
+            playEnd()
           }
         }
       }
@@ -47,7 +56,7 @@ const Main = (props) => {
       setRest(props.workout.rest)
       setRounds(1)
     }
-  }, [work, rest, rounds, working, props.workout.work, props.workout.rest, props.workout.rounds])
+  }, [work, rest, rounds, working, props.workout.work, props.workout.rest, props.workout.rounds, play])
 
   const switchWork = () => {
     setFanfara(false)
