@@ -56,7 +56,7 @@ const Main = (props) => {
       setRest(props.workout.rest)
       setRounds(1)
     }
-  }, [work, rest, rounds, working, props.workout.work, props.workout.rest, props.workout.rounds, play])
+  }, [work, rest, rounds, working, props.workout.work, props.workout.rest, props.workout.rounds, play, playEnd])
 
   const switchWork = () => {
     setFanfara(false)
