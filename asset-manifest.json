@@ -1,16 +1,13 @@
 {
   "files": {
     "main.css": "/plank-work/static/css/main.073c9b0a.css",
-    "main.js": "/plank-work/static/js/main.df09d3cc.js",
-    "static/js/787.6f2f84fb.chunk.js": "/plank-work/static/js/787.6f2f84fb.chunk.js",
-    "static/media/logo.svg": "/plank-work/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.js": "/plank-work/static/js/main.3f4dcc7c.js",
     "index.html": "/plank-work/index.html",
     "main.073c9b0a.css.map": "/plank-work/static/css/main.073c9b0a.css.map",
-    "main.df09d3cc.js.map": "/plank-work/static/js/main.df09d3cc.js.map",
-    "787.6f2f84fb.chunk.js.map": "/plank-work/static/js/787.6f2f84fb.chunk.js.map"
+    "main.3f4dcc7c.js.map": "/plank-work/static/js/main.3f4dcc7c.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.df09d3cc.js"
+    "static/js/main.3f4dcc7c.js"
   ]
 }
