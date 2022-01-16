@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/plank-work/static/css/main.073c9b0a.css",
-    "main.js": "/plank-work/static/js/main.cf078682.js",
+    "main.js": "/plank-work/static/js/main.dedab7ad.js",
     "static/js/845.44706f2b.chunk.js": "/plank-work/static/js/845.44706f2b.chunk.js",
     "static/media/applause.wav": "/plank-work/static/media/applause.04224f99a593459a1bf8.wav",
     "static/media/go.mp3": "/plank-work/static/media/go.61eb319eac45ccb3f35c.mp3",
@@ -9,11 +9,11 @@
     "static/media/beep-07a.mp3": "/plank-work/static/media/beep-07a.250aa10d630dbb27ddbf.mp3",
     "index.html": "/plank-work/index.html",
     "main.073c9b0a.css.map": "/plank-work/static/css/main.073c9b0a.css.map",
-    "main.cf078682.js.map": "/plank-work/static/js/main.cf078682.js.map",
+    "main.dedab7ad.js.map": "/plank-work/static/js/main.dedab7ad.js.map",
     "845.44706f2b.chunk.js.map": "/plank-work/static/js/845.44706f2b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.cf078682.js"
+    "static/js/main.dedab7ad.js"
   ]
 }
