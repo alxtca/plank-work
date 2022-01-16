@@ -47,7 +47,7 @@ const Main = (props) => {
       setRest(props.workout.rest)
       setRounds(1)
     }
-  }, [work, rest, rounds, working])
+  }, [work, rest, rounds, working, props.workout.work, props.workout.rest, props.workout.rounds])
 
   const switchWork = () => {
     setFanfara(false)
@@ -62,7 +62,7 @@ const Main = (props) => {
       <p>Current Round: {rounds}</p>
       <p>Max Rounds: {props.workout.rounds}</p>
       <button onClick={switchWork}>{working ? 'Stop Workout' : 'Start Workout' }</button> 
-      <p>{fanfara ? "Workout finished" : "go go go"}</p>
+      <p>{fanfara ? "Workout finished" : "go go go "}</p>
 
     </>
   )
