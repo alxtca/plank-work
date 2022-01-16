@@ -14,6 +14,7 @@ const Main = (props) => {
   const [work, setWork] = useState(props.workout.work)
   const [rest, setRest] = useState(props.workout.rest)
   const [rounds, setRounds] = useState(1)
+  const [delay, setDelay] = useState(props.workout.delay)
   const [play] = useSound(boopSfx)
   const [playEnd] = useSound(boopEnd)
 
@@ -21,42 +22,54 @@ const Main = (props) => {
 
     if (working)
     {
-      if (work > 0) { //countdown work
+      if (delay  > 0) {
         setTimeout(() => {
-          if (work < 4) {  play()   }
-          setWork(work-1)
+          if (delay < 4) {  play()   }
+          setDelay(delay-1)
         }, 1000)
       }
-      if (work === 0) { //countdown rest
-        if (rest > 0){
+      else {
+        if (work > 0) { //countdown work
           setTimeout(() => {
-            if (rest < 4) {  play()   }
-            setRest(rest-1)
+            if (work < 4) {  play()   }
+            setWork(work-1)
           }, 1000)
         }
-        if (rest === 0) { // --round
-          if (rounds < props.workout.rounds) {
-            setRounds(rounds +1)
-            //reset work and rest counters
-            setWork(props.workout.work)
-            setRest(props.workout.rest)
-          } 
-          else { //no more rounds to go. stop workout
-            setWorking(false)
-            // fanfara can be added here
-            setFanfara(true)
-            playEnd()
+  
+        if (work === 0) { //countdown rest
+          if (rest > 0){
+            setTimeout(() => {
+              if (rest < 4) {  play()   }
+              setRest(rest-1)
+            }, 1000)
+          }
+          if (rest === 0) { // --round
+            if (rounds < props.workout.rounds) {
+              setRounds(rounds +1)
+              //reset work and rest counters
+              setWork(props.workout.work)
+              setRest(props.workout.rest)
+            } 
+            else { //no more rounds to go. stop workout
+              setWorking(false)
+              // fanfara can be added here
+              setFanfara(true)
+              playEnd()
+            }
           }
         }
       }
+
+      
     }
     else //workout has been stopped, reset all values
     {
       setWork(props.workout.work)
       setRest(props.workout.rest)
       setRounds(1)
+      setDelay(props.workout.delay)
     }
-  }, [work, rest, rounds, working, props.workout.work, props.workout.rest, props.workout.rounds, play, playEnd])
+  }, [work, rest, rounds, working, delay, props.workout.work, props.workout.rest, props.workout.rounds, props.workout.delay, play, playEnd])
 
   const switchWork = () => {
     setFanfara(false)
@@ -65,7 +78,8 @@ const Main = (props) => {
 
   return (
     <>
-      <h1>Main</h1>   
+      <h1>Main</h1> 
+      <p>Delay before workout: {delay}</p>  
       <p>Work: {work} seconds</p>
       <p>Rest: {rest} seconds</p>
       <p>Current Round: {rounds}</p>

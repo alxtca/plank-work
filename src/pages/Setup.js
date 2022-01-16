@@ -16,10 +16,23 @@ const Setup = (props) => {
       ...props.workout,
       rounds: e.target.value})
   }
+  function handleDelay(e){
+    props.setWorkout({
+      ...props.workout,
+      delay: e.target.value})
+  }
   return (
     <>
       <h1>Setup</h1>
       <div>
+      <label>
+        Delay before workout:
+        <input
+          value={props.workout.delay}
+          onChange={handleDelay}
+        />
+      </label>
+      <br />
       <label>
         Seconds per set:
         <input

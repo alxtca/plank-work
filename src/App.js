@@ -9,7 +9,7 @@ import Layout from "./pages/Layout"
 
 function App() {
   //workout object
-  const [workout, setWorkout] = useState({work:40, rest:20, rounds:5})
+  const [workout, setWorkout] = useState({work:40, rest:20, rounds:5, delay:8})
   // get from local storage work and rest values
   useEffect(() => {
     if (localStorage.getItem("plank-workout") ) {
