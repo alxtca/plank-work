@@ -1,6 +1,9 @@
+import Page from '../components/Page'
+
 const Rules = () => {
   return (
     <>
+    <Page title="Rules" />
       <h1>Rules</h1>
       <ol>
         <li>Full workout should consist of 3 to 5 rounds.</li>
